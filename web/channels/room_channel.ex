@@ -5,8 +5,8 @@ defmodule Aristochat.RoomChannel do
     {:ok, socket}
   end
 
-  def handle_in("new_msg", %{"body" => body}, socket) do 
-    broadcast! socket, "new_msg", %{
+  def handle_in("chat_msg", %{"body" => body}, socket) do 
+    broadcast! socket, "chat_msg", %{
       body: body,
       username: socket.assigns.username
     }
