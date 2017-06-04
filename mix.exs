@@ -3,7 +3,7 @@ defmodule Aristochat.Mixfile do
 
   def project do
     [app: :aristochat,
-     version: "0.0.1",
+     version: "0.0.2",
      elixir: "~> 1.4",
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:phoenix, :gettext] ++ Mix.compilers,
@@ -17,7 +17,7 @@ defmodule Aristochat.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {Aristochat, []},
-     applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext]]
+     applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext, :libcluster]]
   end
 
   # Specifies which paths to compile per environment.
@@ -34,6 +34,8 @@ defmodule Aristochat.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
-     {:distillery, "~> 1.4"}]
+     {:distillery, "~> 1.4"},
+     {:libcluster, "~> 2.1"},
+     {:poison, "~> 1.5.0", override: true}]
   end
 end

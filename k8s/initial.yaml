@@ -1,0 +1,35 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata: 
+    name: aristochat
+spec:
+    replicas: 3
+    template: 
+        metadata:
+            labels: 
+                app: aristochat
+        spec:
+            containers:
+                - name: aristochat
+                  image: boingram/aristochat:initial
+                  env:
+                  - name: PORT
+                    value: '4000'
+                  ports:
+                  - containerPort: 4000
+                    name: "phoenix-port"
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: aristochat
+    labels: 
+        app: aristochat
+spec:
+    type: LoadBalancer
+    ports: 
+    - port: 80
+      targetPort: 4000
+      name: "phoenix-port"
+    selector:
+        app: aristochat

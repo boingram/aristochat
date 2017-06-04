@@ -14,11 +14,21 @@ use Mix.Config
 config :aristochat, Aristochat.Endpoint,
   http: [port: {:system, "PORT"}],
   url: [host: "example.com", port: 80],
-  cache_static_manifest: "priv/static/manifest.json",
   server: true
-
+  
 # Do not print debug messages in production
 config :logger, level: :info
+
+config :libcluster,
+  topologies: [
+    k8s: [
+      strategy: Cluster.Strategy.Kubernetes,
+      config: [
+        kubernetes_selector: "app=aristochat",
+        kubernetes_node_basename: "aristochat"
+      ]
+    ]
+  ]
 
 # ## SSL Support
 #
