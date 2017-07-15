@@ -1,18 +1,12 @@
 # Aristochat
 
-To start your Phoenix app:
+Aristochat is a chat server used to explore running Elixir apps on Kubernetes.
+To run locally, install dependencies with `mix deps.get` and start your endpoint with `mix phoenix.server`. 
+To run via Kubernetes, submit your desired specifications file from the `k8s` folder with `kubectl create -f <spec>.yaml`. 
+To interact with via a terminal UI, check out [Aristochat Client](https://github.com/boingram/aristochat-client).
 
-  * Install dependencies with `mix deps.get`
-  * Start Phoenix endpoint with `mix phoenix.server`
-
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
-
-Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
-
-## Learn more
-
-  * Official website: http://www.phoenixframework.org/
-  * Guides: http://phoenixframework.org/docs/overview
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
+### Kubernetes Specifications
+| Name | Description | 
+|------|-------------|
+| **initial** | Specifies deployment and service for Aristochat
+| **initial_clustered** | Expands initial with environment variables to faciliate clustering Aristochat pods
