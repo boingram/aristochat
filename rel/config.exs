@@ -24,13 +24,13 @@ use Mix.Releases.Config,
 environment :dev do
   set dev_mode: true
   set include_erts: false
-  set cookie: :"WFV4G;(dqBx0@o]E3?]L{)&Cb//:cntaz3ax]0L7]oi&p5c.;L22E3Jlp53j:n@3"
+  set cookie: :"7P/UdcOI^Dv}1<56&|xNH/}l;e>kemBV~JbMd?hz*~K3XACv^fo=B3Xh;/B%oJh,"
 end
 
 environment :prod do
   set include_erts: true
   set include_src: false
-  set cookie: :"d28xn%y;,8i}$:@kV9t:9pj1:KO0f&2F={g__*7dW(8Z]`K%5;o?{?oIcqFU.gkf"
+  set cookie: :".ILU[tO=z|HD:z`J{n$K(8_&u6eG@9iC27w`]]fz!Km%O/;D5_vl;/Ps6Yu4]*^!"
 end
 
 # You may define one or more releases in this file.
@@ -43,6 +43,5 @@ release :aristochat do
   set applications: [
     :runtime_tools
   ]
-  set vm_args: "vm.args"
 end
 
